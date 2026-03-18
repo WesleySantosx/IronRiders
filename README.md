@@ -6,7 +6,7 @@ Projeto desenvolvido em grupo para a faculdade, com o objetivo de criar um site 
 
 ## Integrantes do grupo
 - Wesley Santos 
-- Eduar Ienzen
+- Eduardo Ienzen
 - Guilherme
 
 
