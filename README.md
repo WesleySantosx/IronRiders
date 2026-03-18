@@ -20,4 +20,9 @@ O foco do projeto é aplicar conceitos de desenvolvimento web, organização de 
 ## Tecnologias utilizadas
 - HTML5  
 - CSS3  
-- JavaScript  
+- JavaScript
+
+---
+
+## Status do Projeto
+ - Em desenvolvimento
