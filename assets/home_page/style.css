@@ -185,6 +185,10 @@ a {
     min-width: 250px;
 }
 
+.footer-section h2 {
+    color: #e60000;
+}
+
 .footer-section h3 {
     margin-bottom: 15px;
 }
@@ -220,6 +224,54 @@ a {
     font-size: 14px;
 }
 
+
+.servicos {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.conteudo {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+.conteudo h2 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.conteudo p {
+    font-size: 14px;
+    max-width: 300px;
+}
 /*resposividades*/
 
 @media (max-width: 768px) {
@@ -269,16 +321,18 @@ a {
         z-index: 2000000;
     }
 
-      .motos {
+    .motos {
+        
         flex-direction: column;
         align-items: center;
     }
 
     .moto {
-        img{
+        img {
             height: 40vw;
             width: 40vw;
         }
+
         width: 50vw;
         height: 70vw;
     }
@@ -292,12 +346,14 @@ a {
     .motos {
         gap: 90px;
     }
-     .moto {
-        img{
-            height: 40vw;
-            width: 40vw;
+
+    .moto {
+        img {
+            height: 50vw;
+            width: 60vw;
         }
-        width: 50vw;
-        height: 70vw;
+
+        width: 80vw;
+        height: 80vw;
     }
 }

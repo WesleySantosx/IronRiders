@@ -30,3 +30,17 @@ const sideMenu = document.getElementById("sideMenu");
 menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
 });
+
+//destaques
+
+const motos = document.querySelector('.motos');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+next.addEventListener('click', () => {
+    motos.scrollBy({ left: 900, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+    motos.scrollBy({ left: -900, behavior: 'smooth' });
+});
