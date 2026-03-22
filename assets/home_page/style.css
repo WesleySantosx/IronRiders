@@ -1,43 +1,37 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+header {
+    background-color: rgb(224, 211, 211);
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+}
+
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-
     padding: 15px 40px;
-    background-color: #a19f9f;
-    color: rgb(7, 7, 7);
+    position: relative;
 }
 
 .logo {
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
     color: #e60000;
 }
 
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #e60000;
-}
 .btn-login {
     padding: 8px 18px;
     border: none;
@@ -53,27 +47,99 @@
     background-color: #ff1a1a;
 }
 
-
-.carrosel{
-width:100%;
-height:400px;
-position:relative;
+.menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 5000;
 }
 
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:opacity 1s;
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    padding-top: 60px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2000;
 }
 
-.slide.active{
-opacity:1;
+.side-menu a {
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-.slide img{
-width:100%;
-height:100%;
-object-fit:cover;
+.side-menu a:hover {
+    background-color: #e60000;
+}
+
+.side-menu.active {
+    left: 0;
+}
+
+.carrosel {
+    width: 100%;
+    height: 100vh;
+    min-height: 250px;
+    position: relative;
+    opacity: 1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+    }
+
+    .btn-login {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .btn-login {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .carrosel {
+        height: 40vh;
+    }
 }
