@@ -30,11 +30,15 @@ const sideMenu = document.getElementById("sideMenu");
 
 menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
 });
 
 window.addEventListener("scroll", () => {
     if (sideMenu.classList.contains("active")) {
         sideMenu.classList.remove("active");
+    }
+    else  if ( menuToggle.classList.contains("active")) {
+        menuToggle.classList.remove("active");
     }
 });
 
