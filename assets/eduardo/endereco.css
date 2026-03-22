@@ -1,24 +1,29 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BASE */
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #e5e5e5;
+  display: flex;
+  flex-direction: column;
 }
 
 /* NAVBAR */
 header {
-  position: sticky;
-  top: 0;
-  background: black;
+  background: #000;
   padding: 15px 40px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  z-index: 10;
 }
 
 .logo {
@@ -26,6 +31,11 @@ header {
   color: red;
   font-size: 24px;
   justify-self: start;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 nav {
@@ -40,6 +50,7 @@ nav a {
   position: relative;
 }
 
+/* ANIMAÇÃO */
 nav a::after {
   content: "";
   position: absolute;
@@ -55,35 +66,31 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* LAYOUT */
+/* LAYOUT RESPONSIVO INTELIGENTE */
 .layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 70px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  flex: 1;
 }
 
 /* MAPA */
 .mapa {
   position: relative;
+  min-height: 400px;
   background: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b') center/cover;
 }
 
-/* 🔥 CARD CENTRALIZADO */
+/* CARD */
 .card-busca {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 400px;
-  max-width: 90%;
-
+  width: 100%;
+  max-width: 400px;
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  padding-bottom: 10px;
-
-  animation: fadeIn 1s;
 }
 
 /* TABS */
@@ -93,7 +100,7 @@ nav a:hover::after {
 
 .tabs div {
   flex: 1;
-  padding: 18px;
+  padding: 15px;
   text-align: center;
   background: #ddd;
 }
@@ -103,10 +110,9 @@ nav a:hover::after {
   color: white;
 }
 
-/* CAMPO */
+/* CAMPOS */
 .campo {
   padding: 20px;
-  font-size: 16px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -114,7 +120,6 @@ nav a:hover::after {
   padding: 15px;
 }
 
-/* BARRA */
 .barra {
   height: 5px;
   background: #ccc;
@@ -136,11 +141,6 @@ nav a:hover::after {
   gap: 20px;
 }
 
-.topo h1 {
-  font-size: 32px;
-}
-
-/* CARDS */
 .cards {
   display: flex;
   flex-direction: column;
@@ -168,7 +168,7 @@ nav a:hover::after {
   cursor: pointer;
 }
 
-/* 🔥 SEÇÃO EXTRA (AGORA VERMELHA) */
+/* EXTRA */
 .info-extra {
   background: red;
   color: white;
@@ -176,24 +176,43 @@ nav a:hover::after {
   border-radius: 10px;
 }
 
-.info-extra h3 {
-  margin-bottom: 10px;
+/* FOOTER */
+.footer {
+  background: #111;
+  color: #fff;
+  margin-top: auto;
 }
 
-.info-extra li {
-  margin-bottom: 5px;
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-/* ANIMAÇÃO */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  color: red;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footer-section p {
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding: 15px;
+  font-size: 14px;
 }
 
 /* RESPONSIVO */
@@ -202,20 +221,18 @@ nav a:hover::after {
   header {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 15px 20px;
+    gap: 10px;
   }
 
   .logo {
     justify-self: center;
-    margin-bottom: 10px;
   }
 
   nav {
     flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .layout {
-    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .mapa {
@@ -224,7 +241,28 @@ nav a:hover::after {
 
   .card-busca {
     position: static;
-    margin: 20px auto;
     transform: none;
+    margin: 20px auto;
+  }
+
+  .lista {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
