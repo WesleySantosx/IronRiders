@@ -17,13 +17,17 @@ body {
   flex-direction: column;
 }
 
-/* NAVBAR */
+/* NAVBAR SOBRE A IMAGEM */
 header {
-  background: #000;
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding: 15px 40px;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .logo {
@@ -66,21 +70,22 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* LAYOUT RESPONSIVO INTELIGENTE */
+/* LAYOUT */
 .layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex: 1;
 }
 
-/* MAPA */
+/* MAPA (IMAGEM FULL) */
 .mapa {
   position: relative;
-  min-height: 400px;
+  min-height: 500px;
+  padding-top: 80px; /* espaço pro navbar */
   background: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b') center/cover;
 }
 
-/* CARD */
+/* CARD CENTRAL */
 .card-busca {
   position: absolute;
   top: 50%;
@@ -236,7 +241,8 @@ nav a:hover::after {
   }
 
   .mapa {
-    height: 300px;
+    height: auto;
+    padding-top: 100px;
   }
 
   .card-busca {
