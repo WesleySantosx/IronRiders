@@ -24,11 +24,18 @@ showSlide()
 
 },3000)
 
+//menu lateral
 const menuToggle = document.querySelector(".menu-toggle");
 const sideMenu = document.getElementById("sideMenu");
 
 menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
+});
+
+window.addEventListener("scroll", () => {
+    if (sideMenu.classList.contains("active")) {
+        sideMenu.classList.remove("active");
+    }
 });
 
 //limite da nav bar
