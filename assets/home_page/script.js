@@ -31,16 +31,17 @@ menuToggle.addEventListener("click", () => {
     sideMenu.classList.toggle("active");
 });
 
-//destaques
+//limite da nav bar
 
-const motos = document.querySelector('.motos');
-const next = document.querySelector('.next');
-const prev = document.querySelector('.prev');
+const navbar = document.querySelector(".navbar");
+const limite = document.getElementById("secao-limite");
 
-next.addEventListener('click', () => {
-    motos.scrollBy({ left: 900, behavior: 'smooth' });
-});
+window.addEventListener("scroll", () => {
+    const posicao = limite.getBoundingClientRect().top;
 
-prev.addEventListener('click', () => {
-    motos.scrollBy({ left: -900, behavior: 'smooth' });
+    if (posicao <= 0) {
+        navbar.style.top = "-100px";
+    } else {
+        navbar.style.top = "0";
+    }
 });
