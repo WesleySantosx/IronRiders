@@ -18,7 +18,7 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background: #7a0c0c;
+  background: red;
 }
 
 /* HEADER (GRID PARA CENTRALIZAR MENU) */
