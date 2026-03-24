@@ -17,7 +17,7 @@ body {
   flex-direction: column;
 }
 
-/* NAVBAR */
+/* NAVBAR FIXO (CORRIGIDO) */
 header {
   position: fixed;
   top: 0;
@@ -31,13 +31,20 @@ header {
   background: rgba(0, 0, 0, 0.85);
 }
 
+/* LOGO */
 .logo {
   font-family: 'Orbitron', sans-serif;
   color: red;
   font-size: 24px;
   justify-self: start;
+  transition: 0.3s;
 }
 
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* NAV */
 nav {
   display: flex;
   gap: 20px;
@@ -50,6 +57,7 @@ nav a {
   position: relative;
 }
 
+/* ANIMAÇÃO */
 nav a::after {
   content: "";
   position: absolute;
@@ -67,63 +75,113 @@ nav a:hover::after {
 
 /* LAYOUT */
 .layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   flex: 1;
-  margin-top: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 80px; /* 🔥 ESSENCIAL */
 }
 
-/* CONTATO */
-.contato {
+/* MAPA */
+.mapa {
+  position: relative;
+  min-height: 500px;
+  background: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b') center/cover;
+}
+
+/* CARD CENTRAL */
+.card-busca {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.box {
+  max-width: 400px;
   background: white;
-  padding: 30px;
   border-radius: 12px;
-  width: 100%;
-  max-width: 500px;
+  overflow: hidden;
 }
 
-.box h1 {
-  margin-bottom: 10px;
-}
-
-.box p {
-  margin-bottom: 20px;
-  color: #555;
-}
-
-form {
+/* TABS */
+.tabs {
   display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 
-input, textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  outline: none;
+.tabs div {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  background: #ddd;
 }
 
-button {
+.tabs .ativo {
   background: red;
   color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 6px;
-  cursor: pointer;
+}
+
+/* CAMPOS */
+.campo {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.distancia {
+  padding: 15px;
+}
+
+.barra {
+  height: 5px;
+  background: #ccc;
+  margin: 0 15px 15px;
+}
+
+.progresso {
+  width: 40%;
+  height: 100%;
+  background: red;
+}
+
+/* DIREITA */
+.lista {
+  padding: 40px;
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-loja {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
-button:hover {
-  background: darkred;
+.card-loja:hover {
+  transform: translateY(-5px);
+}
+
+.card-loja button {
+  margin-top: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* EXTRA */
+.info-extra {
+  background: red;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* FOOTER */
@@ -182,9 +240,33 @@ button:hover {
   nav {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
   }
 
-  .box {
+  .card-busca {
+    position: static;
+    transform: none;
+    margin: 20px auto;
+  }
+
+  .lista {
     padding: 20px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
   }
 }
