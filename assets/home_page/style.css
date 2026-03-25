@@ -152,15 +152,17 @@ a {
 }
 
 .moto {
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     transition: 0.3s;
 }
 
 .moto:hover {
     transform: scale(1.05);
-    background-color: #e60000;
+    border: 2px solid #e60000;
     color: #ffffff;
+
+
 }
 
 .moto img {
@@ -177,6 +179,16 @@ a {
 .moto p {
     margin-bottom: 15px;
     font-weight: bold;
+}
+
+.saibaMais{
+    padding: 5px;
+    background-color: #000000;
+    border-radius: 14px;
+    color: white;
+}
+.saibaMais:hover{
+    background-color: #e60000;
 }
 
 
