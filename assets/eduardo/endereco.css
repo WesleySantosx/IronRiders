@@ -176,6 +176,12 @@ nav a:hover::after {
   cursor: pointer;
 }
 
+.card-loja button:hover {
+  background: #b30000;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* EXTRA */
 .info-extra {
   background: red;
