@@ -182,13 +182,17 @@ a {
 }
 
 .saibaMais{
-    padding: 5px;
-    background-color: #000000;
-    border-radius: 14px;
+    position: relative;
+    font-size: 10px;
+    left: 140px;
+    top: 20px;
+    padding: 10px;
+    background-color:#e60000;
     color: white;
+    transition: 0.3s;
 }
 .saibaMais:hover{
-    background-color: #e60000;
+    background-color: #000000;
 }
 
 
