@@ -13,7 +13,7 @@ Projeto desenvolvido em grupo para a faculdade, com o objetivo de criar um site 
 ## Sobre o projeto
 O **IronRiders** é um site que simula uma plataforma de venda de motos, onde os usuários podem visualizar modelos, obter informações e entrar em contato.
 
-O foco do projeto é aplicar conceitos de desenvolvimento web, organização de código e trabalho em equipe.
+O foco do projeto é aplicar conceitos de desenvolvimento web, organização de código e trabalho em equipe, apenas usando HTML e CSS (por enquanto)
 
 
 
