@@ -9,6 +9,7 @@ body {
     background: #0a0a0a;
     color: #fff;
 }
+
 /*video*/
 .vd {
     position: relative;
@@ -37,7 +38,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     text-align: center;
 }
 
@@ -61,7 +62,18 @@ body {
 }
 
 /* FEATURES */
+
+.text2 {
+    font-family: "EB Garamond", serif;
+    position: relative;
+    top: 20vh;
+    display: flex;
+    justify-content: center;
+}
+
 .features {
+    position: relative;
+    top: 20vh;
     display: flex;
     gap: 20px;
     padding: 60px;
@@ -70,16 +82,14 @@ body {
 }
 
 .card {
-    width: 40vw;
-    background: #111;
-    border-radius: 10px;
+    width: 30vw;
     overflow: hidden;
     transition: 0.3s;
 }
 
 .card img {
     width: 100%;
-    height: 80vh;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -92,18 +102,8 @@ body {
     color: #aaa;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.tech{
-    width: 80vw;
-}
-
 /* FULL SECTION */
 .full {
-    height: 80vh;
-    background: url('img/bg2.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +111,67 @@ body {
 
 .full .content {
     text-align: center;
-    background: rgba(0,0,0,0.6);
     padding: 40px;
     border-radius: 10px;
+
+}
+/*footer*/
+
+.footer {
+    background-color: black;
+    color: #fff;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    color: #e60000;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: red;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    font-size: 14px;
 }
