@@ -360,9 +360,6 @@ a {
 }
 
 @media (max-width: 1090px) {
-    .navbar {
-        height: 9vw;
-    }
 
     .motos {
         flex-wrap: wrap;
@@ -376,22 +373,15 @@ a {
         left: 0;
     }
 }
-
+@media (max-width:850px){
+    .card{
+        height: 40vh;
+    }
+}
 @media (max-width: 950px) {
     .footer-container {
         flex-direction: column;
         text-align: center;
-    }
-
-    .navbar {
-        height: 15vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        z-index: 10000;
     }
 
     .int {
@@ -421,17 +411,6 @@ a {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
-
-    .navbar {
-        height: 20vw;
-        position: fixed;
-        top: 0;
-        left: 0;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        z-index: 10000;
     }
 
     .carrosel {
@@ -478,6 +457,14 @@ a {
 
 
 @media (max-width: 480px) {
+    .vd{
+        height: 50vh;
+    }
+    .hero-content{
+        left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
     .logo {
         font-size: 30px;
         position: relative;
@@ -512,6 +499,9 @@ a {
         transform: none;
         border: none;
         color: inherit;
+    }
+    .card p{
+        opacity: 1;
     }
 
 
