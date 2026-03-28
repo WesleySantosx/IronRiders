@@ -14,6 +14,10 @@ html {
   -webkit-text-size-adjust: 100%; /* Evita zoom automático de texto em navegadores WebKit (celular) */
   text-size-adjust: 100%; /* Mantém o tamanho do texto estável em vários navegadores */
 }
+ a{
+    color: inherit;       /* usa a cor do elemento pai */
+    text-decoration: none;
+  }
 
 /* Configuração da largura total da página */
 html, body {
