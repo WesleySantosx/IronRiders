@@ -1,0 +1,457 @@
+/* Seleciona TODOS os elementos da página */
+*,
+/* Seleciona o pseudo-elemento before de todos os elementos */
+*::before,
+/* Seleciona o pseudo-elemento after de todos os elementos */
+*::after {
+  margin: 0; /* Remove a margem padrão dos elementos */
+  padding: 0; /* Remove o espaçamento interno padrão */
+  box-sizing: border-box; /* Faz padding e borda entrarem no cálculo do tamanho total */
+}
+
+/* Configurações gerais do HTML */
+html {
+  -webkit-text-size-adjust: 100%; /* Evita zoom automático de texto em navegadores WebKit (celular) */
+  text-size-adjust: 100%; /* Mantém o tamanho do texto estável em vários navegadores */
+}
+
+/* Configuração da largura total da página */
+html, body {
+  width: 100%; /* Faz HTML e BODY ocuparem toda a largura da tela */
+  overflow-x: hidden; /* Esconde qualquer conteúdo que ultrapasse horizontalmente */
+}
+
+/* Estilo principal do corpo da página */
+body {
+  font-family: 'Poppins', sans-serif; /* Define a fonte principal do site */
+  background: #e5e5e5; /* Cor de fundo cinza claro */
+  display: flex; /* Usa Flexbox no body */
+  flex-direction: column; /* Organiza os elementos em coluna */
+  min-height: 100vh; /* Garante altura mínima de 100% da tela */
+  min-width: 0; /* Evita estouro horizontal em layouts flex/grid */
+}
+
+/* =========================
+   HEADER
+========================= */
+
+/* Estilização do cabeçalho */
+header {
+  position: fixed; /* Fixa o cabeçalho no topo da tela */
+  top: 0; /* Cola no topo */
+  left: 0; /* Cola na esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  padding: 12px 16px; /* Espaçamento interno vertical e horizontal */
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza em coluna no mobile */
+  align-items: center; /* Centraliza horizontalmente */
+  gap: 8px; /* Espaço entre os elementos */
+  z-index: 1000; /* Garante que fique acima de outros elementos */
+  background: rgba(0, 0, 0, 0.9); /* Fundo preto com leve transparência */
+}
+
+/* Estilo da logo */
+.logo {
+  font-family: 'Orbitron', sans-serif; /* Fonte futurista para a logo */
+  color: red; /* Cor vermelha */
+  font-size: clamp(16px, 5vw, 24px); /* Tamanho responsivo da fonte */
+  transition: 0.3s; /* Suaviza animações */
+  white-space: nowrap; /* Impede quebra de linha na logo */
+}
+
+/* Efeito ao passar o mouse na logo */
+.logo:hover {
+  transform: scale(1.1); /* Aumenta levemente a logo */
+}
+
+/* Menu de navegação */
+nav {
+  display: flex; /* Usa Flexbox */
+  flex-wrap: wrap; /* Permite quebrar linha se faltar espaço */
+  justify-content: center; /* Centraliza os links */
+  gap: 8px 12px; /* Espaço vertical e horizontal entre links */
+}
+
+/* Links do menu */
+nav a {
+  color: white; /* Cor branca */
+  text-decoration: none; /* Remove sublinhado */
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+  position: relative; /* Necessário para o pseudo-elemento funcionar */
+  white-space: nowrap; /* Evita quebra no texto do link */
+}
+
+/* Linha animada abaixo do link */
+nav a::after {
+  content: ""; /* Cria o pseudo-elemento */
+  position: absolute; /* Posiciona em relação ao link */
+  width: 0%; /* Começa invisível */
+  height: 2px; /* Altura da linha */
+  background: red; /* Cor vermelha */
+  left: 0; /* Começa na esquerda */
+  bottom: -3px; /* Fica um pouco abaixo do texto */
+  transition: 0.3s; /* Anima a linha */
+}
+
+/* Efeito hover da linha do menu */
+nav a:hover::after {
+  width: 100%; /* Faz a linha crescer até o fim */
+}
+
+/* =========================
+   LAYOUT MOBILE
+========================= */
+
+/* Estrutura principal da página */
+.layout {
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza em coluna no mobile */
+  flex: 1; /* Faz ocupar o espaço disponível */
+  margin-top: 90px; /* Dá espaço para não ficar atrás do header fixo */
+  width: 100%; /* Largura total */
+  min-width: 0; /* Evita estouro horizontal */
+}
+
+/* =========================
+   MAPA
+========================= */
+
+/* Área do mapa/banner */
+.mapa {
+  position: relative; /* Permite posicionar elementos absolutos dentro dele */
+  min-height: 260px; /* Altura mínima */
+  background: url('https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b') center/cover no-repeat; /* Imagem de fundo centralizada e cobrindo a área */
+  width: 100%; /* Largura total */
+}
+
+/* =========================
+   CARD BUSCA
+========================= */
+
+/* Caixa de busca */
+.card-busca {
+  position: static; /* Posição normal no fluxo da página */
+  width: calc(100% - 24px); /* Largura total menos margens laterais */
+  max-width: 400px; /* Limita largura máxima */
+  margin: 16px auto; /* Centraliza horizontalmente com espaço acima/abaixo */
+  background: white; /* Fundo branco */
+  border-radius: 12px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde conteúdo que ultrapassar */
+}
+
+/* Área das abas */
+.tabs {
+  display: flex; /* Usa Flexbox para deixar as abas lado a lado */
+}
+
+/* Cada aba */
+.tabs div {
+  flex: 1; /* Faz cada aba ocupar o mesmo espaço */
+  padding: 12px 6px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  background: #ddd; /* Fundo cinza claro */
+  font-size: clamp(10px, 3vw, 13px); /* Fonte responsiva */
+  word-break: break-word; /* Quebra palavras longas */
+  cursor: pointer; /* Mostra a mãozinha ao passar o mouse */
+}
+
+/* Aba ativa */
+.tabs .ativo {
+  background: red; /* Fundo vermelho */
+  color: white; /* Texto branco */
+}
+
+/* Campo de informação dentro do card */
+.campo {
+  padding: 16px; /* Espaçamento interno */
+  border-bottom: 1px solid #ccc; /* Linha separadora inferior */
+  font-size: clamp(12px, 3vw, 15px); /* Fonte responsiva */
+  word-break: break-word; /* Quebra palavras grandes */
+}
+
+/* Texto da distância */
+.distancia {
+  padding: 12px 16px 8px; /* Espaçamento interno */
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+}
+
+/* Barra de progresso externa */
+.barra {
+  height: 5px; /* Altura da barra */
+  background: #ccc; /* Fundo cinza */
+  margin: 0 16px 16px; /* Margens laterais e inferior */
+  border-radius: 3px; /* Bordas arredondadas */
+  overflow: hidden; /* Esconde excesso interno */
+}
+
+/* Parte preenchida da barra */
+.progresso {
+  width: 40%; /* Define o quanto está preenchido */
+  height: 100%; /* Mesma altura da barra */
+  background: red; /* Cor vermelha */
+  border-radius: 3px; /* Bordas arredondadas */
+}
+
+/* =========================
+   LISTA
+========================= */
+
+/* Área da lista de lojas/informações */
+.lista {
+  padding: 16px 12px; /* Espaçamento interno */
+  background: #f4f4f4; /* Fundo cinza bem claro */
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza em coluna */
+  gap: 16px; /* Espaço entre os elementos */
+  width: 100%; /* Largura total */
+  min-width: 0; /* Evita estouro horizontal */
+}
+
+/* Título principal da seção topo */
+.topo h1 {
+  font-size: clamp(16px, 5vw, 24px); /* Fonte responsiva */
+  word-break: break-word; /* Quebra palavras longas */
+}
+
+/* Parágrafo da seção topo */
+.topo p {
+  font-size: clamp(12px, 3vw, 15px); /* Fonte responsiva */
+  color: #555; /* Cinza escuro */
+}
+
+/* Área dos cards */
+.cards {
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza em coluna */
+  gap: 16px; /* Espaço entre os cards */
+}
+
+/* =========================
+   CARD LOJA
+========================= */
+
+/* Card individual da loja */
+.card-loja {
+  background: white; /* Fundo branco */
+  padding: 16px 12px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  transition: 0.3s; /* Animação suave */
+  min-width: 0; /* Evita estouro */
+  word-break: break-word; /* Quebra palavras grandes */
+  overflow-wrap: break-word; /* Quebra texto longo */
+}
+
+/* Efeito hover do card */
+.card-loja:hover {
+  transform: translateY(-4px); /* Faz o card subir levemente */
+}
+
+/* Título do card */
+.card-loja h2 {
+  font-size: clamp(13px, 4vw, 18px); /* Fonte responsiva */
+  margin-bottom: 6px; /* Espaço abaixo */
+}
+
+/* Texto e spans do card */
+.card-loja p,
+.card-loja span {
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+  display: block; /* Faz cada item ocupar linha inteira */
+  margin-bottom: 4px; /* Espaço abaixo */
+}
+
+/* Botão do card */
+.card-loja button {
+  margin-top: 10px; /* Espaço acima */
+  background: red; /* Fundo vermelho */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  padding: 9px 14px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Mostra mãozinha */
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+}
+
+/* Efeito hover do botão */
+.card-loja button:hover {
+  background: #b30000; /* Vermelho mais escuro */
+  transform: scale(1.05); /* Aumenta levemente */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Sombra ao redor */
+}
+
+/* =========================
+   INFO EXTRA
+========================= */
+
+/* Caixa de informação adicional */
+.info-extra {
+  background: red; /* Fundo vermelho */
+  color: white; /* Texto branco */
+  padding: 16px 14px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  min-width: 0; /* Evita estouro */
+  word-break: break-word; /* Quebra palavras grandes */
+  overflow-wrap: break-word; /* Quebra textos longos */
+}
+
+/* Título da caixa extra */
+.info-extra h3 {
+  font-size: clamp(13px, 4vw, 18px); /* Fonte responsiva */
+  margin-bottom: 10px; /* Espaço abaixo */
+}
+
+/* Itens da lista extra */
+.info-extra li {
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+  list-style: none; /* Remove bolinhas da lista */
+  margin-bottom: 6px; /* Espaço abaixo */
+  padding-left: 2px; /* Pequeno recuo */
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+/* Rodapé principal */
+.footer {
+  background: #111; /* Fundo preto escuro */
+  color: #fff; /* Texto branco */
+  width: 100%; /* Largura total */
+}
+
+/* Container interno do rodapé */
+.footer-container {
+  display: flex; /* Usa Flexbox */
+  flex-direction: column; /* Organiza em coluna no mobile */
+  gap: 24px; /* Espaço entre seções */
+  max-width: 1200px; /* Limita largura máxima */
+  margin: auto; /* Centraliza */
+  padding: 32px 16px; /* Espaçamento interno */
+}
+
+/* Título principal da seção do rodapé */
+.footer-section h2 {
+  color: red; /* Vermelho */
+  font-family: 'Orbitron', sans-serif; /* Fonte estilizada */
+  font-size: clamp(14px, 4vw, 20px); /* Fonte responsiva */
+  margin-bottom: 8px; /* Espaço abaixo */
+}
+
+/* Subtítulo do rodapé */
+.footer-section h3 {
+  font-size: clamp(13px, 3.5vw, 17px); /* Fonte responsiva */
+  margin-bottom: 8px; /* Espaço abaixo */
+}
+
+/* Parágrafo do rodapé */
+.footer-section p {
+  color: #ccc; /* Cinza claro */
+  font-size: clamp(11px, 3vw, 14px); /* Fonte responsiva */
+  margin-bottom: 6px; /* Espaço abaixo */
+  word-break: break-word; /* Quebra palavras longas */
+  overflow-wrap: break-word; /* Quebra textos grandes */
+}
+
+/* Parte inferior do rodapé */
+.footer-bottom {
+  text-align: center; /* Centraliza o texto */
+  border-top: 1px solid #333; /* Linha separadora acima */
+  padding: 14px 12px; /* Espaçamento interno */
+  font-size: clamp(10px, 2.5vw, 13px); /* Fonte responsiva */
+  word-break: break-word; /* Quebra palavras grandes */
+}
+
+/* =========================
+   TABLET MÉDIO (≥ 650px)
+========================= */
+
+@media (min-width: 650px) { /* Aplica essas regras em telas a partir de 650px */
+
+  header {
+    display: grid; /* Troca o Flexbox por Grid */
+    grid-template-columns: 1fr auto 1fr; /* Divide em 3 colunas */
+    align-items: center; /* Alinha verticalmente */
+    padding: 15px 40px; /* Espaçamento maior */
+    gap: 0; /* Remove espaço extra */
+  }
+
+  .logo {
+    justify-self: start; /* Posiciona a logo no início */
+    font-size: 24px; /* Tamanho fixo */
+  }
+
+  nav {
+    justify-self: center; /* Centraliza o menu */
+    flex-wrap: nowrap; /* Impede quebra de linha */
+    gap: 20px; /* Espaço maior entre links */
+  }
+
+  nav a {
+    font-size: 14px; /* Fonte fixa */
+  }
+
+  .layout {
+    margin-top: 70px; /* Ajusta espaço por causa do header */
+  }
+
+  .mapa {
+    min-height: 380px; /* Aumenta a altura mínima do mapa */
+  }
+
+  .card-busca {
+    position: absolute; /* Posiciona em cima do mapa */
+    top: 50%; /* Vai para o meio vertical */
+    left: 50%; /* Vai para o meio horizontal */
+    transform: translate(-50%, -50%); /* Centraliza exatamente */
+    width: 90%; /* Largura responsiva */
+    margin: 0; /* Remove margem externa */
+  }
+
+  .lista {
+    padding: 24px 20px; /* Aumenta o espaçamento interno */
+  }
+}
+
+/* =========================
+   DESKTOP (≥ 768px)
+========================= */
+
+@media (min-width: 768px) { /* Aplica essas regras em telas maiores */
+
+  .layout {
+    display: grid; /* Usa Grid Layout */
+    grid-template-columns: 1fr 1fr; /* Divide em duas colunas iguais */
+    grid-auto-rows: auto; /* Altura automática das linhas */
+    margin-top: 64px; /* Ajusta espaço superior */
+  }
+
+  .mapa {
+    min-height: unset; /* Remove altura mínima anterior */
+    height: 100%; /* Faz o mapa ocupar toda a altura da coluna */
+    align-self: stretch; /* Estica verticalmente */
+  }
+
+  .card-busca {
+    position: absolute; /* Continua sobre o mapa */
+    top: 50%; /* Centralização vertical */
+    left: 50%; /* Centralização horizontal */
+    transform: translate(-50%, -50%); /* Ajusta centro exato */
+    width: 88%; /* Define largura */
+    margin: 0; /* Remove margem */
+  }
+
+  .lista {
+    padding: 28px 20px; /* Mais espaçamento interno */
+    align-self: start; /* Alinha no topo da coluna */
+  }
+
+  .footer-container {
+    flex-direction: row; /* Organiza seções lado a lado */
+    flex-wrap: wrap; /* Permite quebra se necessário */
+  }
+
+  .footer-section {
+    flex: 1; /* Cada seção cresce igualmente */
+    min-width: 200px; /* Largura mínima de cada bloco */
+  }
+}
