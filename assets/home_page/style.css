@@ -40,6 +40,7 @@ a {
 }
 
 .hero-content {
+    font-family: "Oswald", sans-serif;
     position: absolute;
     top: 10%;
     bottom: 100px;
@@ -133,6 +134,7 @@ a {
 /*motos em destaques*/
 
 .destaque-motos {
+    font-family: "Archivo Black", sans-serif;
     padding: 60px 20px;
     background-color: #111;
     color: white;
@@ -180,18 +182,21 @@ a {
     margin-bottom: 15px;
     font-weight: bold;
 }
+.alert{
+     animation: alerta 1s infinite;
+}
 
-.saibaMais{
+.saibaMais {
     position: relative;
     font-size: 10px;
     left: 140px;
-    top: 20px;
     padding: 10px;
-    background-color:#e60000;
+    background-color: #e60000;
     color: white;
     transition: 0.3s;
 }
-.saibaMais:hover{
+
+.saibaMais:hover {
     background-color: #000000;
 }
 
@@ -202,6 +207,7 @@ a {
     text-align: center;
     background-color: #111;
     color: white;
+     font-family: "Archivo Black", sans-serif;
 }
 
 .servicos {
@@ -221,10 +227,12 @@ a {
     height: 450px;
     overflow: hidden;
 }
-.card p{
+
+.card p {
     opacity: 0;
     transition: 0.5s;
 }
+
 .card img {
     width: 100%;
     height: 100%;
@@ -244,7 +252,8 @@ a {
         color: #e60000;
         transition: 0.6s;
     }
-    p{
+
+    p {
         opacity: 1;
     }
 }
@@ -339,11 +348,16 @@ a {
 
 
 /*resposividades*/
-@media (max-width: 1200px){
-     .vd{
-       height: 80vh;
+@media (max-width: 1200px) {
+    .vd {
+        height: 80vh;
     }
+
+    .saibaMais {
+        left: 0;
     }
+}
+
 @media (max-width: 1090px) {
     .navbar {
         height: 9vw;
@@ -352,8 +366,13 @@ a {
     .motos {
         flex-wrap: wrap;
     }
-     .vd{
+
+    .vd {
         height: 70vh;
+    }
+
+    .saibaMais {
+        left: 0;
     }
 }
 
@@ -385,8 +404,13 @@ a {
     .motos {
         flex-wrap: wrap;
     }
-    .vd{
+
+    .vd {
         height: 70vh;
+    }
+
+    .saibaMais {
+        left: 0;
     }
 }
 
@@ -440,6 +464,10 @@ a {
     .motos {
         flex-wrap: wrap;
     }
+
+    .saibaMais {
+        left: 0;
+    }
 }
 
 
@@ -471,6 +499,10 @@ a {
         align-items: center;
     }
 
+    .moto {
+        height: 900vh;
+    }
+
 
 }
 
@@ -491,5 +523,18 @@ a {
 
         width: 80vw;
         height: 80vw;
+    }
+}
+/*animação de alerta*/
+
+@keyframes alerta {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: #ff4d4d;
+    }
+    100% {
+        color: #fff;
     }
 }
