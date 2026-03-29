@@ -1,107 +1,197 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  font-family: Arial;
 }
 
 body {
-  background: #111;
+  background: #000;
   color: #fff;
 }
 
+/* HEADER */
+header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid red;
+}
 
-.hero {
+header h1 {
+  color: red;
+}
+
+/* 🔥 BANNER COM VÍDEO */
+.banner {
   position: relative;
-  height: 60vh; /* vídeo menor */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
+/* 🎥 VÍDEO DE FUNDO */
 .bg-video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
+/* 🔴 TEXTO CENTRAL */
 .overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-content {
   position: relative;
+  z-index: 1;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
 }
 
-.hero-content h1 {
-  font-size: 48px;
+.overlay h2 {
+  font-size: 60px;
+}
+
+.overlay h3 {
+  font-size: 40px;
   color: red;
 }
 
-.hero-content p {
-  margin: 15px 0;
-  font-size: 18px;
+.overlay p {
+  margin: 10px 0;
 }
 
-/* BOTÃO */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
+.overlay button {
+  padding: 12px 25px;
+  border: none;
   background: red;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.3s;
+  color: white;
+  cursor: pointer;
 }
 
-.btn:hover {
-  background: #cc0000;
+/* DESCRIÇÃO */
+.descricao {
+  padding: 60px;
+  text-align: center;
 }
 
-/* CATÁLOGO */
-.container {
-  padding: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+/* PERFORMANCE */
+.performance {
+  padding: 60px;
+  background: #111;
+  text-align: center;
 }
 
-/* CARDS */
-.card {
-  background: #1c1c1c;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.grid div {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.card img {
-  width: 100%;
-  height: 220px; /* imagem maior */
-  object-fit: cover;
+/* TECNOLOGIA */
+.tecnologia {
+  padding: 60px;
+  text-align: center;
 }
 
-.card-content {
-  padding: 15px;
+/* CTA */
+.cta {
+  padding: 80px;
+  text-align: center;
 }
 
-.card-content h2 {
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid red;
+}
+
+/* VÍDEO EXTRA */
+.video {
+  padding: 60px;
+  text-align: center;
+  background: #000;
+}
+
+.video h2 {
+  margin-bottom: 20px;
+}
+
+.video video {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.overlay h2 {
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+
+  text-shadow: 
+    0 0 10px rgba(255,0,0,0.7),
+    0 0 20px rgba(255,0,0,0.5);
+}
+
+.overlay h3 {
+  font-size: 32px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
   color: red;
-  margin-bottom: 10px;
+
+  margin-top: 10px;
+
+  position: relative;
+}
+
+/* Linha estilizada abaixo */
+.overlay h3::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  background: red;
+  margin: 10px auto 0;
+}
+
+.galeria {
+  padding: 60px;
+  text-align: center;
+}
+
+.grid-img {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grid-img img {
+  width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.grid-img img:hover {
+  transform: scale(1.05);
 }
