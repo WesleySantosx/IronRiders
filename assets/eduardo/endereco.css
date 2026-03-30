@@ -51,7 +51,7 @@ header {
   align-items: center; /* Centraliza horizontalmente */
   gap: 8px; /* Espaço entre os elementos */
   z-index: 1000; /* Garante que fique acima de outros elementos */
-  background: rgba(0, 0, 0, 0.9); /* Fundo preto com leve transparência */
+  background: rgb(7, 7, 7); /* Fundo preto com leve transparência */
 }
 
 /* Estilo da logo */
