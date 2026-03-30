@@ -15,7 +15,8 @@ O **IronRiders** é um site que simula uma plataforma de venda de motos, onde os
 
 O foco do projeto é aplicar conceitos de desenvolvimento web, organização de código e trabalho em equipe, apenas usando HTML e CSS (por enquanto).
 
-
+## Página inicial 
+![Home_page](assets/readmeIMG/home_page.jpg)
 
 ## Tecnologias utilizadas
 - HTML
